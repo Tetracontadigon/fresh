@@ -10,6 +10,11 @@
       "StackName": "amplify-constellation-staging-175015",
       "StackId": "arn:aws:cloudformation:us-east-1:326194827681:stack/amplify-constellation-staging-175015/a9884fd0-c71b-11ec-9ab3-0e21bb979187",
       "AmplifyAppId": "dmmwgkq5yn29x"
+    },
+    "categories": {
+      "auth": {
+        "constellation": {}
+      }
     }
   }
 }
