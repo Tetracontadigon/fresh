@@ -7,10 +7,10 @@
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { Post } from "../models";
-import { ViewProps } from "@aws-amplify/ui-react";
-export declare type PostLucanProps = React.PropsWithChildren<Partial<ViewProps> & {
+import { FlexProps } from "@aws-amplify/ui-react";
+export declare type EditPostForm2Props = React.PropsWithChildren<Partial<FlexProps> & {
     post?: Post;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function PostLucan(props: PostLucanProps): React.ReactElement;
+export default function EditPostForm2(props: EditPostForm2Props): React.ReactElement;

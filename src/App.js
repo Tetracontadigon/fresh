@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 //copied imports
@@ -12,6 +12,7 @@ import Form from './Form';
 import List from './List';
 import Login from './Login';
 import {AmplifyProvider} from "@aws-amplify/ui-react";
+import EditForm from './Edit';
 Amplify.configure(awsconfig);
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route exact path='/' element={<Login/>}/>
           <Route exact path='/form' element={<Form/>}/>
           <Route exact path='/list' element={<List/>}/>
+          <Route exact path='/edit/:cid' element={<EditForm/>}/>
         </Routes>
 
         

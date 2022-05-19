@@ -6,10 +6,26 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useDataStoreUpdateAction,
+  useNavigateAction,
+} from "@aws-amplify/ui-react/internal";
+import { Post } from "../models";
+import { schema } from "../models/schema";
 import { Icon, Image, Text, View } from "@aws-amplify/ui-react";
 export default function PostLucan(props) {
-  const { overrides, ...rest } = props;
+  const { post, overrides, ...rest } = props;
+  const iconOnClick = useDataStoreUpdateAction({
+    fields: { likes: "9999999999999999" },
+    id: post?.id,
+    model: Post,
+    schema: schema,
+  });
+  const outlineSlashInterfaceSlashEditaltOnClick = useNavigateAction({
+    type: "url",
+    url: `${"/edit/"}${post?.id}`,
+  });
   return (
     <View
       width="375px"
@@ -28,6 +44,7 @@ export default function PostLucan(props) {
         top="0px"
         left="0px"
         padding="0px 0px 0px 0px"
+        src={post?.image}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <View
@@ -38,6 +55,9 @@ export default function PostLucan(props) {
         left="130px"
         overflow="hidden"
         padding="0px 0px 0px 0px"
+        onClick={() => {
+          iconOnClick();
+        }}
         {...getOverrideProps(overrides, "\uD83D\uDD12Icon")}
       >
         <Icon
@@ -81,7 +101,7 @@ export default function PostLucan(props) {
         left="130px"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Classic Long Sleeve T-Shirt"
+        children={post?.title}
         {...getOverrideProps(overrides, "Classic Long Sleeve T-Shirt")}
       ></Text>
       <Text
@@ -123,7 +143,7 @@ export default function PostLucan(props) {
         left="130px"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Post: LOREM IPSUM DOLOR SIT AMET...."
+        children={post?.text}
         {...getOverrideProps(overrides, "Post: LOREM IPSUM DOLOR SIT AMET....")}
       ></Text>
       <Text
@@ -144,7 +164,7 @@ export default function PostLucan(props) {
         left="153px"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="66K"
+        children={post?.likes}
         {...getOverrideProps(overrides, "66K")}
       ></Text>
       <View
@@ -270,6 +290,42 @@ export default function PostLucan(props) {
           left="53.53%"
           right="24.88%"
           {...getOverrideProps(overrides, "Vector30632767")}
+        ></Icon>
+      </View>
+      <View
+        width="28px"
+        height="28px"
+        position="absolute"
+        top="3px"
+        left="338px"
+        padding="0px 0px 0px 0px"
+        onClick={() => {
+          outlineSlashInterfaceSlashEditaltOnClick();
+        }}
+        {...getOverrideProps(overrides, "Outline/Interface/Edit-alt")}
+      >
+        <Icon
+          width="19.25px"
+          height="20.41650390625px"
+          viewBox={{ minX: 0, minY: 0, width: 19.25, height: 20.41650390625 }}
+          paths={[
+            {
+              d: "M13.8681 0.256282C13.704 0.0921873 13.4814 0 13.2494 0C13.0173 0 12.7947 0.0921873 12.6306 0.256282L1.90619 10.9807C1.79626 11.0907 1.71761 11.2279 1.67832 11.3783L0.511649 15.8448C0.433144 16.1454 0.519873 16.465 0.739527 16.6847C0.959181 16.9043 1.27883 16.9911 1.57938 16.9125L6.04588 15.7459C6.1963 15.7066 6.33353 15.6279 6.44346 15.518L17.1679 4.79355C17.5096 4.45184 17.5096 3.89782 17.1679 3.55611L13.8681 0.256282ZM3.31151 12.0503L13.2494 2.11244L15.3118 4.17483L5.3739 14.1127L2.58234 14.8419L3.31151 12.0503Z",
+              fill: "rgba(229,229,229,1)",
+              fillRule: "evenodd",
+            },
+            {
+              d: "M0.875 18.6667C0.391751 18.6667 0 19.0584 0 19.5417C0 20.0249 0.391751 20.4167 0.875 20.4167L18.375 20.4167C18.8582 20.4167 19.25 20.0249 19.25 19.5417C19.25 19.0584 18.8582 18.6667 18.375 18.6667L0.875 18.6667Z",
+              fill: "rgba(229,229,229,1)",
+              fillRule: "nonzero",
+            },
+          ]}
+          position="absolute"
+          top="13.54%"
+          bottom="13.54%"
+          left="13.54%"
+          right="17.71%"
+          {...getOverrideProps(overrides, "Icon")}
         ></Icon>
       </View>
     </View>

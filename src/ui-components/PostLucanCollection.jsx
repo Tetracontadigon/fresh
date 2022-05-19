@@ -6,11 +6,20 @@
 
 /* eslint-disable */
 import React from "react";
+import { Post } from "../models";
+import {
+  getOverrideProps,
+  useDataStoreBinding,
+} from "@aws-amplify/ui-react/internal";
 import PostLucan from "./PostLucan";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Collection } from "@aws-amplify/ui-react";
 export default function PostLucanCollection(props) {
-  const { items, overrideItems, overrides, ...rest } = props;
+  const { items: itemsProp, overrideItems, overrides, ...rest } = props;
+  const itemsDataStore = useDataStoreBinding({
+    type: "collection",
+    model: Post,
+  }).items;
+  const items = itemsProp !== undefined ? itemsProp : itemsDataStore;
   return (
     <Collection
       type="list"
@@ -22,6 +31,7 @@ export default function PostLucanCollection(props) {
     >
       {(item, index) => (
         <PostLucan
+          post={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></PostLucan>

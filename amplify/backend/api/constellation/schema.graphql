@@ -5,4 +5,6 @@ type Post @model @auth(rules: [{allow: public}]) {
   image: String
   groundCoords: String
   skyCoords: String
+  likes: String
 }
+ 

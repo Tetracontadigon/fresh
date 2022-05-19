@@ -6,10 +6,25 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useNavigateAction,
+} from "@aws-amplify/ui-react/internal";
 import { Icon, Text, View } from "@aws-amplify/ui-react";
 export default function LNavBar(props) {
   const { overrides, ...rest } = props;
+  const iconThreeZeroSevenZeroTwoSevenSevenFiveOnClick = useNavigateAction({
+    type: "url",
+    url: "/",
+  });
+  const vectorThreeOneFiveEightTwoEightFiveEightOnClick = useNavigateAction({
+    type: "url",
+    url: "/list",
+  });
+  const iconThreeOneFiveEightTwoEightFiveSevenOnClick = useNavigateAction({
+    type: "url",
+    url: "/form",
+  });
   return (
     <View
       width="375px"
@@ -40,72 +55,11 @@ export default function LNavBar(props) {
         {...getOverrideProps(overrides, "Space App V1")}
       ></Text>
       <View
-        padding="0px 0px 0px 0px"
-        width="40px"
-        height="29px"
-        position="absolute"
-        top="14px"
-        left="324px"
-        {...getOverrideProps(overrides, "Group 2")}
-      >
-        <Icon
-          width="40px"
-          height="0px"
-          viewBox={{ minX: 0, minY: 0, width: 40, height: 1 }}
-          paths={[
-            {
-              d: "M2.5 -5C1.11929 -5 0 -3.88071 0 -2.5C0 -1.11929 1.11929 0 2.5 0L2.5 -5ZM37.5 0C38.8807 0 40 -1.11929 40 -2.5C40 -3.88071 38.8807 -5 37.5 -5L37.5 0ZM2.5 0L37.5 0L37.5 -5L2.5 -5L2.5 0Z",
-              stroke: "rgba(229,229,229,1)",
-              fillRule: "nonzero",
-              strokeWidth: 5,
-            },
-          ]}
-          position="absolute"
-          top="0px"
-          left="0px"
-          {...getOverrideProps(overrides, "Line 3")}
-        ></Icon>
-        <Icon
-          width="40px"
-          height="0px"
-          viewBox={{ minX: 0, minY: 0, width: 40, height: 1 }}
-          paths={[
-            {
-              d: "M2.5 -5C1.11929 -5 0 -3.88071 0 -2.5C0 -1.11929 1.11929 0 2.5 0L2.5 -5ZM37.5 0C38.8807 0 40 -1.11929 40 -2.5C40 -3.88071 38.8807 -5 37.5 -5L37.5 0ZM2.5 0L37.5 0L37.5 -5L2.5 -5L2.5 0Z",
-              stroke: "rgba(229,229,229,1)",
-              fillRule: "nonzero",
-              strokeWidth: 5,
-            },
-          ]}
-          position="absolute"
-          top="14px"
-          left="0px"
-          {...getOverrideProps(overrides, "Line 4")}
-        ></Icon>
-        <Icon
-          width="40px"
-          height="0px"
-          viewBox={{ minX: 0, minY: 0, width: 40, height: 1 }}
-          paths={[
-            {
-              d: "M2.5 -5C1.11929 -5 0 -3.88071 0 -2.5C0 -1.11929 1.11929 0 2.5 0L2.5 -5ZM37.5 0C38.8807 0 40 -1.11929 40 -2.5C40 -3.88071 38.8807 -5 37.5 -5L37.5 0ZM2.5 0L37.5 0L37.5 -5L2.5 -5L2.5 0Z",
-              stroke: "rgba(229,229,229,1)",
-              fillRule: "nonzero",
-              strokeWidth: 5,
-            },
-          ]}
-          position="absolute"
-          top="29px"
-          left="0px"
-          {...getOverrideProps(overrides, "Line 5")}
-        ></Icon>
-      </View>
-      <View
         width="48px"
         height="48px"
         position="absolute"
         top="1px"
-        left="270px"
+        left="276px"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Outline/General/Home")}
       >
@@ -130,6 +84,9 @@ export default function LNavBar(props) {
           bottom="9.38%"
           left="15.21%"
           right="15.21%"
+          onClick={() => {
+            iconThreeZeroSevenZeroTwoSevenSevenFiveOnClick();
+          }}
           {...getOverrideProps(overrides, "Icon30702775")}
         ></Icon>
       </View>
@@ -138,7 +95,7 @@ export default function LNavBar(props) {
         height="48px"
         position="absolute"
         top="1px"
-        left="216px"
+        left="231px"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Outline/Communication/User")}
       >
@@ -166,34 +123,82 @@ export default function LNavBar(props) {
           {...getOverrideProps(overrides, "Icon30702773")}
         ></Icon>
       </View>
+      <Icon
+        width="40px"
+        height="40px"
+        viewBox={{ minX: 0, minY: 0, width: 40, height: 40 }}
+        paths={[
+          {
+            d: "M4 4L36 4L36 28L6.34 28L4 30.34L4 4ZM4 0C1.8 0 0.02 1.8 0.02 4L0 40L8 32L36 32C38.2 32 40 30.2 40 28L40 4C40 1.8 38.2 0 36 0L4 0ZM8 20L24 20L24 24L8 24L8 20ZM8 14L32 14L32 18L8 18L8 14ZM8 8L32 8L32 12L8 12L8 8Z",
+            fill: "rgba(229,229,229,1)",
+            fillRule: "nonzero",
+          },
+        ]}
+        position="absolute"
+        top="12.24%"
+        bottom="6.12%"
+        left="36.8%"
+        right="52.53%"
+        onClick={() => {
+          vectorThreeOneFiveEightTwoEightFiveEightOnClick();
+        }}
+        {...getOverrideProps(overrides, "Vector31582858")}
+      ></Icon>
       <View
         width="48px"
         height="48px"
         position="absolute"
-        top="1px"
-        left="162px"
+        top="0px"
+        left="324px"
+        overflow="hidden"
         padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "Outline/Communication/Share")}
+        {...getOverrideProps(overrides, "MyIcon")}
       >
         <Icon
-          width="35px"
-          height="39px"
-          viewBox={{ minX: 0, minY: 0, width: 35, height: 39 }}
+          width="32px"
+          height="8px"
+          viewBox={{ minX: 0, minY: 0, width: 32, height: 8 }}
           paths={[
             {
-              d: "M22 6.5C22 2.91015 24.9101 0 28.5 0C32.0899 0 35 2.91015 35 6.5C35 10.0899 32.0899 13 28.5 13C26.5807 13 24.8558 12.1682 23.6659 10.8454L18.2313 13.8097L12.1503 17.2846C12.691 18.2328 13 19.3303 13 20.5C13 21.0927 12.9207 21.6669 12.7721 22.2125L23.6659 28.1546C24.8558 26.8318 26.5807 26 28.5 26C32.0899 26 35 28.9101 35 32.5C35 36.0899 32.0899 39 28.5 39C24.9101 39 22 36.0899 22 32.5C22 31.9073 22.0793 31.3331 22.228 30.7875L11.3341 24.8454C10.1442 26.1682 8.41926 27 6.5 27C2.91015 27 0 24.0899 0 20.5C0 16.9101 2.91015 14 6.5 14C7.80136 14 9.01339 14.3824 10.0298 15.041L16.7687 11.1903L22.228 8.21249C22.0793 7.66688 22 7.09271 22 6.5ZM28.5 3C26.567 3 25 4.567 25 6.5C25 8.433 26.567 10 28.5 10C30.433 10 32 8.433 32 6.5C32 4.567 30.433 3 28.5 3ZM6.5 17C4.567 17 3 18.567 3 20.5C3 22.433 4.567 24 6.5 24C8.433 24 10 22.433 10 20.5C10 18.567 8.433 17 6.5 17ZM25 32.5C25 30.567 26.567 29 28.5 29C30.433 29 32 30.567 32 32.5C32 34.433 30.433 36 28.5 36C26.567 36 25 34.433 25 32.5Z",
+              d: "M4 0C1.8 0 0 1.8 0 4C0 6.2 1.8 8 4 8C6.2 8 8 6.2 8 4C8 1.8 6.2 0 4 0ZM28 0C25.8 0 24 1.8 24 4C24 6.2 25.8 8 28 8C30.2 8 32 6.2 32 4C32 1.8 30.2 0 28 0ZM16 0C13.8 0 12 1.8 12 4C12 6.2 13.8 8 16 8C18.2 8 20 6.2 20 4C20 1.8 18.2 0 16 0Z",
               fill: "rgba(229,229,229,1)",
-              fillRule: "evenodd",
+              fillRule: "nonzero",
             },
           ]}
           position="absolute"
-          top="9.38%"
-          bottom="9.38%"
-          left="13.54%"
-          right="13.54%"
-          {...getOverrideProps(overrides, "Icon30702771")}
+          top="41.67%"
+          bottom="41.67%"
+          left="16.67%"
+          right="16.67%"
+          {...getOverrideProps(overrides, "Vector31582851")}
         ></Icon>
       </View>
+      <Icon
+        width="37px"
+        height="36px"
+        viewBox={{ minX: 0, minY: 0, width: 37, height: 36 }}
+        paths={[
+          {
+            d: "M19.2934 10.4516C20.1665 10.4516 20.8743 11.1606 20.8743 12.0352L20.8743 16.2581L25.0902 16.2581C25.9633 16.2581 26.6711 16.9671 26.6711 17.8417C26.6711 18.7163 25.9633 19.4253 25.0902 19.4253L20.8743 19.4253L20.8743 23.6481C20.8743 24.5227 20.1665 25.2317 19.2934 25.2317C18.4202 25.2317 17.7124 24.5227 17.7124 23.6481L17.7124 19.4253L13.4965 19.4253C12.6233 19.4253 11.9155 18.7163 11.9155 17.8417C11.9155 16.9671 12.6233 16.2581 13.4965 16.2581L17.7124 16.2581L17.7124 12.0352C17.7124 11.1606 18.4202 10.4516 19.2934 10.4516Z",
+            fill: "rgba(229,229,229,1)",
+            fillRule: "nonzero",
+          },
+          {
+            d: "M2.93964 24.396C-1.79873 12.7462 6.75763 0 19.3163 0L19.9939 0C29.3861 0 37 7.62653 37 17.0343C37 27.5088 28.5228 36 18.0657 36L1.58104 36C0.910177 36 0.312359 35.5759 0.0897021 34.942C-0.132954 34.3081 0.0680382 33.6025 0.591109 33.1817L4.7469 29.8387C4.92861 29.6925 4.99288 29.4442 4.90495 29.228L2.93964 24.396ZM19.3163 3.16716C9.00318 3.16716 1.97674 13.6343 5.86786 23.2011L7.83318 28.033C8.44869 29.5463 7.99874 31.2849 6.72677 32.3081L6.07447 32.8328L18.0657 32.8328C26.7766 32.8328 33.8381 25.7596 33.8381 17.0343C33.8381 9.3757 27.6398 3.16716 19.9939 3.16716L19.3163 3.16716Z",
+            fill: "rgba(229,229,229,1)",
+            fillRule: "evenodd",
+          },
+        ]}
+        position="absolute"
+        top="14.29%"
+        bottom="12.24%"
+        left="50.93%"
+        right="39.2%"
+        onClick={() => {
+          iconThreeOneFiveEightTwoEightFiveSevenOnClick();
+        }}
+        {...getOverrideProps(overrides, "Icon31582857")}
+      ></Icon>
     </View>
   );
 }

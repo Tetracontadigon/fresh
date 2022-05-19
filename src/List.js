@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { LNavBarFixed, PostLucanCollection } from './ui-components';
-import logo from './logo.svg';
+import { LNavBar, PostLucanCollection } from './ui-components';
+//import logo from './logo.svg';
 import './App.css';
-import Amplify from 'aws-amplify';
+//import Amplify from 'aws-amplify';
 import "@aws-amplify/ui-react";
 import {AmplifyProvider} from "@aws-amplify/ui-react";
 import "./aws-exports";
@@ -18,7 +18,7 @@ function ListF(){
         <AmplifyProvider>
             <div className="list">
                 <h1>Posts</h1>
-                <LNavBarFixed />
+                <LNavBar />
                 <PostLucanCollection />
             </div>
           </AmplifyProvider>

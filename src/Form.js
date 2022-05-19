@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { FormForPartU } from './ui-components';
-import logo from './logo.svg';
+import { NewPostForm, LNavBar } from './ui-components';
+//import logo from './logo.svg';
 import './App.css';
-import Amplify from 'aws-amplify';
+//import Amplify from 'aws-amplify';
 import {AmplifyProvider} from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react";
 import "./aws-exports";
@@ -17,8 +17,9 @@ function FormF() {
     return (
       <AmplifyProvider>
         <div className="App">
-          <h1>Input Data</h1>
-          <FormForPartU />
+            <LNavBar />
+            <h1>Input Data</h1>
+            <NewPostForm />
         </div>
       </AmplifyProvider>
     );

@@ -15,6 +15,7 @@ export declare class Post {
   readonly image?: string | null;
   readonly groundCoords?: string | null;
   readonly skyCoords?: string | null;
+  readonly likes?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Post, PostMetaData>);

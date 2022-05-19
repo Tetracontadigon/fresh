@@ -6,11 +6,8 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { Post } from "../models";
-import { ViewProps } from "@aws-amplify/ui-react";
-export declare type PostLucanProps = React.PropsWithChildren<Partial<ViewProps> & {
-    post?: Post;
-} & {
+import { IconProps } from "@aws-amplify/ui-react";
+export declare type OutlineInterfaceEditaltProps = React.PropsWithChildren<Partial<IconProps> & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function PostLucan(props: PostLucanProps): React.ReactElement;
+export default function OutlineInterfaceEditalt(props: OutlineInterfaceEditaltProps): React.ReactElement;
